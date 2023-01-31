@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: inventario
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventario
+    username: postgres
+    password: admin
+    validationQuery: SELECT 1
+    testOnBorrow: true
+  jpa:
+    show-sql: true
+    hibernate:
+      #naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+      format-sql: true
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
