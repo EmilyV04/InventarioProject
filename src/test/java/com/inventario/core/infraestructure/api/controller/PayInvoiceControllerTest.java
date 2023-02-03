@@ -35,7 +35,6 @@ class PayInvoiceControllerTest {
 
     @Test
     void payInvoice() throws Exception {
-        //var content = buildContent();
         mvc.perform(MockMvcRequestBuilders.put("/invoice/payInvoice/{invoiceNumber}",1))
                 .andDo(print())
                 .andExpect(status().isOk());
